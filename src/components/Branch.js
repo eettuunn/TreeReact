@@ -1,31 +1,22 @@
-import React from 'react'
-import { useState } from 'react';
+import React, {useContext} from 'react'
 import Node from './Node/Node'
+import {Context} from "../providers/Context";
+import {setName} from "../utils";
 
 const Branch = ({ item, level}) => {
-
     const hasChildren = item.children && item.children.length !== 0;
 
-    const renderBranches = () => {
-        if(hasChildren){
-            const nextLevel = level + 1;
-            return item.children.map((child) => {
-                return <Branch key={child.id} item={child} level={nextLevel} />
-            });
-        }
+    const renderChildren = () =>
+        item.children.map(child => <Branch key={child.id} item={child} level={level + 1}/>);
 
-        return null;
-    }
 
     return(
         <>
             <Node
-            item={item}
-            hasChildren={hasChildren}
-            level={level}
+                item={item}
+                level={level}
             />
-            <button>+</button>
-            {renderBranches()}
+            {hasChildren && renderChildren()}
         </>
     );
 };

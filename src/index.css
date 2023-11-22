@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -7,7 +13,26 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main__button {
+  width: 10vw;
 }
+
+.button {
+  padding: 6px 12px;
+  border: 0;
+  color: white;
+}
+
+.add__button {
+  background-color: rgba(0, 128, 0, 0.8);
+}
+
+.del__button {
+  background-color: rgba(255, 0, 0, 0.8);
+}
+
+.edit__button {
+  background-color: rgba(255, 212, 0, 0.8);
+  color: black;
+}
+

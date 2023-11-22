@@ -1,22 +1,12 @@
-import { useState } from 'react';
-import { useEffect } from 'react';
-import './App.css';
+import './index.css';
 import Tree from './components/Tree/Tree'
-import { TREE } from './DefaultTree'
-
-const Person = (props) => {
-  return <>
-  <h1>{props.name ?? "Danil"}</h1>
-  <h2>Grasmik</h2>
-  </>
-}
+import {useContext} from "react";
+import {Context} from "./providers/Context";
 
 const App = () => {
-return (
-  <div className='App'>
-    <Tree data={TREE} />
-  </div>
-)
+    const {tree} = useContext(Context);
+
+    return <Tree data={tree.children} />
 }
 
 export default App;

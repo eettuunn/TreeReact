@@ -1,6 +1,21 @@
-.node{
-    width: 6vw;
+.nodeWrapper {
+    display: flex;
+    column-gap: 10px;
+}
+
+.nodeWrapper button {
+    opacity: 0;
+}
+
+.nodeWrapper:hover button {
+    opacity: 1;
+}
+
+
+.node {
+    display: flex;
+    justify-content: center;
+    width: 10vw;
     border: 2px solid green;
-    padding: 6px 0;
-    /* margin: 10px; */
+    padding: 6px;
 }
