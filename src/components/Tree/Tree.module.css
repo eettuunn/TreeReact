@@ -1,0 +1,9 @@
+.tree{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50vw;
+    border: 2px solid green;
+    margin: 50px 0 0 50px;
+    padding: 10px;
+}
