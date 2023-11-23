@@ -36,7 +36,7 @@ function TreeProvider({children}) {
     }
 
     const editNode = (item) => {
-        const name = setName();
+        const name = setName(item.name);
         item.name = name;
         setTree({...tree});
     }

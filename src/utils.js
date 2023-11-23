@@ -1,7 +1,7 @@
-const setName = () => {
-    let name = prompt('Введите текст', 'Node');
+const setName = (nodeName) => {
+    let name = prompt('Введите текст', nodeName ?? 'Node');
     if(name === null || name === ""){
-        return setName();
+        return setName(nodeName);
     } else {
         return name;
     }
