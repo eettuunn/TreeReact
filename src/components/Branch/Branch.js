@@ -1,7 +1,5 @@
-import React, {useContext} from 'react'
-import Node from './Node/Node'
-import {Context} from "../providers/Context";
-import {setName} from "../utils";
+import React from 'react';
+import Node from '../Node/Node';
 
 const Branch = ({ item, level}) => {
     const hasChildren = item.children && item.children.length !== 0;

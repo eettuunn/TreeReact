@@ -1,21 +1,14 @@
 import React, {useContext} from 'react'
-import Branch from '../Branch'
+import Branch from '../Branch/Branch'
 import styles from './Tree.module.css'
 import {Context} from "../../providers/Context";
 
 const Tree = ({data}) => {
-    const {tree, setTree} = useContext(Context);
-
-    const addNewNode = () => {
-        const name = prompt('Введите текст','Node');
-        const newChild = {id: '6', name, children: []};
-        tree.children = [...tree.children, newChild];
-        setTree({...tree});
-    };
+    const {resetTree, addNode} = useContext(Context);
 
     return(
         <div className={styles.tree}>
-            <button className='button add__button main__button' onClick={addNewNode}>+</button>
+            <button className='button add__button main__button' onClick={() => addNode(null)}>+</button>
             {
                 data.map((item) =>
                         <Branch
@@ -26,6 +19,8 @@ const Tree = ({data}) => {
 
                 )
             }
+            <hr className={styles.line}></hr>
+            <button className='button reset__button' onClick={resetTree}>Reset</button>
         </div>
     );
 }
